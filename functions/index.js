@@ -1,5 +1,7 @@
 const functions = require('firebase-functions');
 var admin = require("firebase-admin");
+const path = require('path');
+
 
 let serviceAccount = require("./anonibus-cb1ea-firebase-adminsdk-fpaj2-0b1abeef2a.json");
 
@@ -29,4 +31,15 @@ admin.initializeApp({
             "error": true
           })
         })
+    })
+
+    exports.imageUpdateFirestore = functions.storage.object().onFinalize(async (object) => {
+      const filePath = object.name;
+      const fileName = path.basename(filePath);
+    
+      await db.collection('imagens').doc(fileName).set(object);
+    
+      console.log(fileName, object)
+    
+      return
     })
