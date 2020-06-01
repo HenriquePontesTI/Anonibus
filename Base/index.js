@@ -3,15 +3,12 @@ import { View, Text, StyleSheet, Button } from "react-native";
 import { } from './styles';
 
 
-export default Home = ({ navigation }) => {
+export default Base = () => {
 
   return (
     <View style={styles.container}>
-      <Text>HOME</Text>
-      <Button title="Detalhes Sem Parametro" onPress={() =>
-        navigation.push('HomeDetails')} />
-      <Button title="Detalhes Com Parametro" onPress={() =>
-        navigation.push('HomeDetails', { name: 'Isso é um teste' })} />
+      <Text>Tela Base</Text>
+      <Button title="Texto Botao" onPress={() => alert('Botao clicado')} />
     </View>
   )
 }
