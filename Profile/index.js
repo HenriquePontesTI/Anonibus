@@ -73,7 +73,6 @@ export default Profile = () => {
     getGeocodeAsync({ latitude, longitude })
     setlatitude(location.coords.latitude);
     setlongitude(location.coords.longitude);
-    console.log(AuthContext);
   };
 
   useEffect(() => {

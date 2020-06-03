@@ -13,6 +13,8 @@ import HomeDetails from './Home/details';
 import Profile from './Profile';
 import Chat from './Chat';
 import Upload from './Upload';
+import Pictures from './Pictures';
+
 
 // import Ionicons from 'react-native-vector-icons/Ionicons';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -58,6 +60,8 @@ const TabsScreen = () => (
           iconName = focused ? 'apple' : 'apple';
         } else if (route.name === 'Upload') {
           iconName = focused ? 'adobe' : 'adobe';
+        } else if (route.name === 'Pictures') {
+          iconName = focused ? 'camera-retro' : 'camera-retro';
         }
         return <FontAwesome5 name={iconName} size={size} color={color} />;
       },
@@ -66,6 +70,7 @@ const TabsScreen = () => (
     <Tabs.Screen name="Profile" component={ProfileStackScreen} />
     <Tabs.Screen name="Chat" component={Chat} />
     <Tabs.Screen name="Upload" component={Upload} />
+    <Tabs.Screen name="Pictures" component={Pictures} />
   </Tabs.Navigator>
 )
 
