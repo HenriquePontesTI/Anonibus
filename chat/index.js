@@ -107,10 +107,6 @@ export default function Chat() {
               </View>
 
             </View>
-
-
-
-
           ))
         }
       </ScrollView>

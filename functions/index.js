@@ -43,3 +43,25 @@ admin.initializeApp({
     
       return
     })
+
+    exports.salvarLocalizacao = functions.https
+    .onRequest((request, response) => {
+      let queryRef = db.collection('mapa').doc('localizacao_01')
+        .collection('lugar').doc();
+  
+      queryRef.set({
+        city: request.body.city,
+        street: request.body.street,
+        region: request.body.region,
+        country: request.body.country
+      }).then(function () {
+        response.json({
+          "ok": true
+        })
+      })
+        .catch(function () {
+          response.json({
+            "error": true
+          })
+        })
+    })
